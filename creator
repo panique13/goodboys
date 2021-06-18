@@ -1,0 +1,22 @@
+CREATE TABLE good_boys (
+  id integer PRIMARY KEY, 
+  name varchar(100),
+  breed_id integer() FOREIGN KEY,
+  gender integer,
+  customer_id integer,
+  is_patient boolean,
+  is_available boolean,
+  is_sold boolean,
+  price money,
+  temper integer,
+  about text,
+  created timestamp DEFAULT current_timestamp,
+  changed timestamp, 
+  bdate date
+);
+
+CREATE TABLE customers (
+  id integer,
+  created timestamp DEFAULT current_timestamp,
+  changed current_timestamp,
+);

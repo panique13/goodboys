@@ -1,59 +1,59 @@
 @startuml
-Actor Admin
+Actor Content_manager
 participant Site
 participant Server
 Database base
 
-Admin -> Site : open
+Content_manager -> Site : open
 Site -> Server : GET
 Site <-- Server : 200 Response
-Admin <-- Site : Welcome screen
+Content_manager <-- Site : Welcome screen
 
-Admin -> Site : login
+Content_manager -> Site : login
 Site -> Server : Authentication Request
 Site <-- Server : Authentication Response
 Site -> Server : GET all active
 Server -> base : SELECT * from good_boys WHERE is_available is TRUE
 Server <-- base : querry result
 Site <-- Server : 200 Response
-Admin <-- Site : default page
+Content_manager <-- Site : default page
 
 == add doggo ==
 
-Admin -> Site : "push the button add new dog"
+Content_manager -> Site : "push the button add new dog"
 Site -> Server : GET
 Site <-- Server : 200 Response
-Admin <-- Site : "Add" page
-Admin -> Site : fill forms
+Content_manager <-- Site : "Add" page
+Content_manager -> Site : fill forms
 Site -> Server : POST (new doggo information)
 Server -> base : INSERT (add new dog)
 Server <-- base : querry completed
 Site <-- Server : 200 Response
-Admin <-- Site : Dog card view
+Content_manager <-- Site : Dog card view
 
 == update doggo ==
 
-Admin -> Site : "open dog card"
+Content_manager -> Site : "open dog card"
 Site -> Server : GET
 Site <-- Server : 200 Response
-Admin <-- Site : "Dog card" page
-Admin -> Site : change parametres
+Content_manager <-- Site : "Dog card" page
+Content_manager -> Site : change parametres
 Site -> Server : PUT (changed doggo information)
 Server -> base : UPDATE (change the dog)
 Server <-- base : querry completed
 Site <-- Server : 200 Response
-Admin <-- Site : Dog card view
+Content_manager <-- Site : Dog card view
 
 == delete doggo ==
 
-Admin -> Site : "open dog card"
+Content_manager -> Site : "open dog card"
 Site -> Server : GET
 Site <-- Server : 200 Response
-Admin <-- Site : "Dog card" page
-Admin -> Site : change parametres
+Content_manager <-- Site : "Dog card" page
+Content_manager -> Site : change parametres
 Site -> Server : PUT (changed doggo information)
 Server -> base : UPDATE (change the dog)
 Server <-- base : querry completed
 Site <-- Server : 200 Response
-Admin <-- Site : Dog card view
+Content_manager <-- Site : Dog card view
 @enduml

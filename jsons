@@ -1,0 +1,48 @@
+#add dog
+@startjson
+{
+  "name": "La Sharique",
+  "breed": 7,
+  "gender": "кобель",
+  "bdate": "19-06-2009",
+  "is_patient": true,
+  "is_available": true,
+  "price": 15600.99,
+  "temper": 1,
+  "about": "весьма хороший пёсик" 
+}
+@endjson
+
+#add photos of good boy
+@startjson
+{
+  "dog_id": 1234,
+  "url": "/dogs/1234/1_1.png",
+  "is_preview": false
+}
+@endjson
+
+#change parametres of dog
+@startjson
+{
+  "dog_id": 1234
+  "name": "La Sharique",
+  "breed": 7,
+  "gender": "кобель",
+  "bdate": "19-06-2009",
+  "is_patient": true,
+  "is_available": true,
+  "price": 15600.99,
+  "temper": 1,
+  "about": "весьма хороший пёсик" 
+}
+@endjson
+
+#change order status in cart
+@startjson
+{
+  "dog_id": 1234,
+  "user_id": 66613,
+  "status": 1 
+}
+@endjson

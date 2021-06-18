@@ -1,4 +1,4 @@
-# goodboys
+# goodboys INC
 repository for cute project about and for good boys
 
 [HLD schema](https://drive.google.com/file/d/1mLZ3ninRLomtfqsNtTa8tdw1xsbc1wPE/view?usp=sharing)<br>

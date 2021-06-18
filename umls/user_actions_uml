@@ -1,0 +1,52 @@
+@startuml
+Actor User
+participant BankSite
+participant Site
+participant Server
+participant PaymentAPI
+Database base
+
+User -> Site : open
+Site -> Server : GET
+Site <-- Server : 200 Response
+User <-- Site : Welcome screen
+
+User -> Site : login
+Site -> Server : Authentication Request
+Site <-- Server : Authentication Response
+Site -> Server : GET all active
+Server -> base : SELECT * from good_boys WHERE is_available is TRUE
+Server <-- base : querry result
+Site <-- Server : 200 Response
+User <-- Site : default page
+
+User -> Site : set filters
+Site -> Server : GET
+Site <-- Server : 200 Response
+User <-- Site : Filtered page
+User -> Site : add to cart
+Site -> Server : PUT (change status to booked)
+Server -> base : UPDATE (change status to booked)
+Server <-- base : querry completed
+Site <-- Server : 200 Response
+User <-- Site : Cart view
+
+User -> Site : Buy
+Site -> Server : POST (payment data)
+create PaymentAPI
+Server -> PaymentAPI : POST
+Server <-- PaymentAPI : 200
+Site <-- Server : 200 Response
+User <-- Site : Confirm payment request
+
+create BankSite
+User -> BankSite : Confirm
+BankSite -> PaymentAPI : POST (payment data)
+BankSite <-- PaymentAPI : 200
+User <-- BankSite : Confirm payment
+Server <-- PaymentAPI : 200
+Server -> base : UPDATE (change order status to paid)
+Server <-- base : querry completed
+Site <-- Server : 200 Response
+User <-- Site : View status paid in the cart
+@enduml

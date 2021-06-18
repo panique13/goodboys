@@ -9,14 +9,64 @@ CREATE TABLE good_boys (
   is_sold boolean,
   price money,
   temper integer,
-  about text,
+  about varchar(1024),
   created timestamp DEFAULT current_timestamp,
   changed timestamp, 
   bdate date
 );
 
 CREATE TABLE customers (
-  id integer,
+  id integer PRIMARY KEY,
+  name varchar(50),
+  surename varchar(50),
+  mail varchar(50),
+  phone int,
   created timestamp DEFAULT current_timestamp,
-  changed current_timestamp,
+  changed timestamp,
+);
+
+CREATE TABLE statuses (
+  id integer PRIMARY KEY,
+  type varchar(50),
+  created timestamp DEFAULT current_timestamp,
+  changed timestamp,
+);
+
+CREATE TABLE orders (
+  id integer PRIMARY KEY,
+  customer_id integer REFERENCES customers,
+  good_boy_id integer REFERENCES good_boys,
+  status integer REFERENCES statuses,
+  created timestamp DEFAULT current_timestamp,
+  changed timestamp,
+);
+
+CREATE TABLE gallery (
+  id integer PRIMARY KEY,
+  url varchar(1024),
+  good_boy_id integer,
+  is_preview boolean,
+  created timestamp DEFAULT current_timestamp,
+  changed timestamp,
+);
+
+CREATE TABLE breeds (
+  id integer PRIMARY KEY,
+  breed_name varchar,
+  created timestamp DEFAULT current_timestamp,
+  changed timestamp,
+);
+
+CREATE TABLE genders (
+  id integer PRIMARY KEY,
+  gender varchar(50),
+  created timestamp DEFAULT current_timestamp,
+  changed timestamp,
+);
+
+CREATE TABLE tempers (
+  id integer PRIMARY KEY,
+  temper varchar(50)
+  created timestamp DEFAULT current_timestamp,
+  changed timestamp,
 );

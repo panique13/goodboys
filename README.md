@@ -13,5 +13,5 @@ in the **umls** subdirectory - UML Actions diagramms for the User and Content ma
 ![User story](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/panique13/goodboys/master/umls/user_actions.iuml)
 
 
-![Manager story](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/panique13/goodboys/blob/master/umls/Content_manager_actions.iuml)
+![Manager story](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/panique13/goodboys/master/umls/Content_manager_actions.iuml)
 

@@ -7,3 +7,11 @@ repository for cute project about and for good boys
 there are jsons metods for some actions in **jsons** file <br>
 in the **creator** file - SQL requests to create tables<br>
 in the **umls** subdirectory - UML Actions diagramms for the User and Content manager<br>
+
+## UMLs
+
+![User story](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/panique13/goodboys/blob/master/umls/user_actions.iuml)
+
+
+![Manager story](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/panique13/goodboys/blob/master/umls/Content_manager_actions.iuml)
+
